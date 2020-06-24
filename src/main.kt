@@ -37,4 +37,26 @@ fun main() {
     assert(binpow(2, 32) == 4294967296)
 
     println("Fibonacci " + fibonacci(1_000_000))
+
+    val v = 11
+    val edgesList = arrayOf(
+        Pair(0, 1),
+        Pair(1, 5),
+        Pair(2, 3),
+        Pair(2, 4),
+        Pair(2, 5),
+        Pair(3, 7),
+        Pair(3, 9),
+        Pair(3, 10),
+        Pair(5, 6),
+        Pair(5, 8)
+    )
+
+    val adjMatr = createAdjMatrix(edgesList, v)
+
+    val bfsPath = bfs(adjMatr)
+    println("BFS path: $bfsPath")
+
+    val dfsPath = dfs(adjMatr)
+    println("DFS path: $dfsPath")
 }
